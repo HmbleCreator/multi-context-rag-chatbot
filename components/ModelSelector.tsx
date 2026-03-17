@@ -5,15 +5,16 @@ import { useState } from 'react';
 export type AIModelProvider = 
   | 'gemini-2.0-flash'
   | 'gemini-2.0-pro'
-  | 'openrouter-auto'
-  | 'deepseek-v3'
-  | 'deepseek-r1'
-  | 'qwen-3-8b'
-  | 'llama-3-8b'
+  | 'openrouter-hunter-alpha'
+  | 'openrouter-healer-alpha'
   | 'minimax-m2.5'
+  | 'sourceful-riverflow-pro'
+  | 'sourceful-riverflow-fast'
+  | 'step-3.5-flash'
+  | 'arcee-trinity-large'
+  | 'liquid-lfm-thinking'
   | 'nvidia-nemotron-3-super'
-  | 'nvidia-qwen3'
-  | 'nvidia-kimi-k2';
+  | 'nvidia-llama-nemotron-embed';
 
 interface AIModelOption {
   value: AIModelProvider;
@@ -36,60 +37,66 @@ const AI_MODELS: AIModelOption[] = [
     description: 'gemini-2.0-pro (Google)',
     provider: 'gemini'
   },
-  // OpenRouter
+  // OpenRouter Free
   {
-    value: 'openrouter-auto',
-    label: 'Auto (Best Free)',
-    description: 'openrouter/auto - automatically selects best free model',
+    value: 'openrouter-hunter-alpha',
+    label: 'Hunter Alpha',
+    description: 'openrouter/hunter-alpha:free',
     provider: 'openrouter'
   },
   {
-    value: 'deepseek-v3',
-    label: 'DeepSeek V3',
-    description: 'deepseek/deepseek-chat',
-    provider: 'openrouter'
-  },
-  {
-    value: 'deepseek-r1',
-    label: 'DeepSeek R1',
-    description: 'deepseek/deepseek-r1',
-    provider: 'openrouter'
-  },
-  {
-    value: 'qwen-3-8b',
-    label: 'Qwen 3 8B',
-    description: 'qwen/qwen3-8b-instruct',
-    provider: 'openrouter'
-  },
-  {
-    value: 'llama-3-8b',
-    label: 'Llama 3 8B',
-    description: 'meta-llama/llama-3-8b-instruct',
+    value: 'openrouter-healer-alpha',
+    label: 'Healer Alpha',
+    description: 'openrouter/healer-alpha:free',
     provider: 'openrouter'
   },
   {
     value: 'minimax-m2.5',
     label: 'MiniMax M2.5',
-    description: 'minimax/minimax-m2.5',
+    description: 'minimax/minimax-m2.5:free',
     provider: 'openrouter'
   },
-  // NVIDIA
+  {
+    value: 'sourceful-riverflow-pro',
+    label: 'Riverflow Pro',
+    description: 'sourceful/riverflow-v2-pro:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'sourceful-riverflow-fast',
+    label: 'Riverflow Fast',
+    description: 'sourceful/riverflow-v2-fast:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'step-3.5-flash',
+    label: 'Step 3.5 Flash',
+    description: 'stepfun/step-3.5-flash:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'arcee-trinity-large',
+    label: 'Arcee Trinity Large',
+    description: 'arcee-ai/trinity-large-preview:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'liquid-lfm-thinking',
+    label: 'Liquid LFM Thinking',
+    description: 'liquid/lfm-2.5-1.2b-thinking:free',
+    provider: 'openrouter'
+  },
+  // NVIDIA Free
   {
     value: 'nvidia-nemotron-3-super',
     label: 'NVIDIA Nemotron 3 Super',
-    description: 'nvidia/nemotron-3-super-120b-a12b',
+    description: 'nvidia/nemotron-3-super-120b-a12b:free',
     provider: 'nvidia'
   },
   {
-    value: 'nvidia-qwen3',
-    label: 'NVIDIA Qwen3.5 122B',
-    description: 'qwen/qwen3.5-122b-a10b',
-    provider: 'nvidia'
-  },
-  {
-    value: 'nvidia-kimi-k2',
-    label: 'NVIDIA Kimi K2 Thinking',
-    description: 'moonshotai/kimi-k2-thinking',
+    value: 'nvidia-llama-nemotron-embed',
+    label: 'NVIDIA Llama Nemotron Embed',
+    description: 'nvidia/llama-nemotron-embed-vl-1b-v2:free',
     provider: 'nvidia'
   }
 ];

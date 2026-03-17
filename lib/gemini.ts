@@ -20,18 +20,19 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   'gemini-2.0-flash': { provider: 'gemini', model: 'gemini-2.0-flash' },
   'gemini-2.0-pro': { provider: 'gemini', model: 'gemini-2.0-pro' },
 
-  // OpenRouter
-  'openrouter-auto': { provider: 'openrouter', model: 'openrouter/auto' },
-  'deepseek-v3': { provider: 'openrouter', model: 'deepseek/deepseek-chat' },
-  'deepseek-r1': { provider: 'openrouter', model: 'deepseek/deepseek-r1' },
-  'qwen-3-8b': { provider: 'openrouter', model: 'qwen/qwen3-8b-instruct' },
-  'llama-3-8b': { provider: 'openrouter', model: 'meta-llama/llama-3-8b-instruct' },
-  'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5' },
+  // OpenRouter Free
+  'openrouter-hunter-alpha': { provider: 'openrouter', model: 'openrouter/hunter-alpha:free' },
+  'openrouter-healer-alpha': { provider: 'openrouter', model: 'openrouter/healer-alpha:free' },
+  'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5:free' },
+  'sourceful-riverflow-pro': { provider: 'openrouter', model: 'sourceful/riverflow-v2-pro:free' },
+  'sourceful-riverflow-fast': { provider: 'openrouter', model: 'sourceful/riverflow-v2-fast:free' },
+  'step-3.5-flash': { provider: 'openrouter', model: 'stepfun/step-3.5-flash:free' },
+  'arcee-trinity-large': { provider: 'openrouter', model: 'arcee-ai/trinity-large-preview:free' },
+  'liquid-lfm-thinking': { provider: 'openrouter', model: 'liquid/lfm-2.5-1.2b-thinking:free' },
 
-  // NVIDIA
-  'nvidia-nemotron-3-super': { provider: 'nvidia', model: 'nvidia/nemotron-3-super-120b-a12b' },
-  'nvidia-qwen3': { provider: 'nvidia', model: 'qwen/qwen3.5-122b-a10b' },
-  'nvidia-kimi-k2': { provider: 'nvidia', model: 'moonshotai/kimi-k2-thinking' },
+  // NVIDIA Free
+  'nvidia-nemotron-3-super': { provider: 'nvidia', model: 'nvidia/nemotron-3-super-120b-a12b:free' },
+  'nvidia-llama-nemotron-embed': { provider: 'nvidia', model: 'nvidia/llama-nemotron-embed-vl-1b-v2:free' },
 };
 
 function getDefaultProvider(): AIProvider {
