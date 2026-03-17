@@ -11,8 +11,8 @@ const nvidiaApiKey = process.env.NVIDIA_API_KEY;
 
 const DEFAULT_MODELS: Record<AIProvider, string> = {
   gemini: 'gemini-2.0-flash',
-  openrouter: 'deepseek/deepseek-chat-v3-0324:free',
-  nvidia: 'deepseek/deepseek-r1-0528',
+  openrouter: 'openrouter/hunter-alpha:free',
+  nvidia: 'nvidia/nemotron-3-super-120b-a12b:free',
 };
 
 const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = {
@@ -47,7 +47,7 @@ function getDefaultProvider(): AIProvider {
 }
 
 function getOpenRouterFallbackModel(): string {
-  return 'deepseek/deepseek-chat-v3-0324:free';
+  return 'openrouter/hunter-alpha:free';
 }
 
 // Determine provider from model name or use default
