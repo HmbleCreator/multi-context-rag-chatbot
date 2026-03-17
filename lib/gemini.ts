@@ -1,5 +1,4 @@
 import { Message, ContextType, Source } from '@/types';
-import type { ChatResponse } from '@/types';
 import { findSimilarDocuments } from './embeddings';
 import { classifyIntent, getSystemPrompt } from './context-detector';
 import { generateQuerySuggestions } from './query-utils';
@@ -103,7 +102,7 @@ export async function generateResponse(
   userMessage: string,
   history: Message[],
   model?: string
-): Promise<ChatResponse> {
+) {
   // Step 1: Classify the intent
   const intent = classifyIntent(userMessage);
   console.log('Intent classification:', intent);
@@ -239,7 +238,7 @@ export async function streamResponse(
   history: Message[],
   onChunk: (chunk: string) => void,
   model?: string
-): Promise<ChatResponse> {
+) {
   const intent = classifyIntent(userMessage);
   const lang = detectLanguage(userMessage);
   const { docs: relevantDocs, scores, source } = await findSimilarDocuments(userMessage, intent.context, 3);
