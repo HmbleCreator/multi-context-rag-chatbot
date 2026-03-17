@@ -134,7 +134,7 @@ export function ModelSelector({
       </button>
       
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-[60]">
+        <div className="absolute left-0 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-[60] max-h-80 overflow-y-auto">
           {AI_MODELS.map(option => (
             <div
               key={option.value}
