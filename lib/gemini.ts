@@ -1,4 +1,5 @@
-import { Message, ContextType, Source, ChatResponse } from '@/types';
+import { Message, ContextType, Source } from '@/types';
+import type { ChatResponse } from '@/types';
 import { findSimilarDocuments } from './embeddings';
 import { classifyIntent, getSystemPrompt } from './context-detector';
 import { generateQuerySuggestions } from './query-utils';
