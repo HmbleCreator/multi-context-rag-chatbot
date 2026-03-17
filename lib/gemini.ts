@@ -47,7 +47,7 @@ function getDefaultProvider(): AIProvider {
 }
 
 function getOpenRouterFallbackModel(): string {
-  return 'openrouter/hunter-alpha:free';
+  return 'openrouter/hunter-alpha';
 }
 
 // Determine provider from model name or use default
