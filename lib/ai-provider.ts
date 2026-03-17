@@ -122,7 +122,10 @@ export class GeminiProvider extends BaseAIProvider {
       const result = await chat.sendMessageStream(prompt);
       let fullText = '';
       
-      for await (const chunk of result) {
+      const stream = (result as { stream?: AsyncIterable<{ text: () => string }> }).stream;
+      const iterable = stream ?? (result as unknown as AsyncIterable<{ text: () => string }>);
+
+      for await (const chunk of iterable) {
         const text = chunk.text();
         fullText += text;
         onChunk(text);
