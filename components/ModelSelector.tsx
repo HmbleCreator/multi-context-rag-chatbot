@@ -5,14 +5,13 @@ import { useState } from 'react';
 export type AIModelProvider = 
   | 'gemini-2.0-flash'
   | 'gemini-2.0-pro'
-  | 'openrouter-hunter-alpha'
-  | 'openrouter-healer-alpha'
-  | 'nvidia-nemotron-3-super'
+  | 'openrouter-auto'
+  | 'deepseek-v3'
+  | 'deepseek-r1'
+  | 'qwen-3-8b'
+  | 'llama-3-8b'
   | 'minimax-m2.5'
-  | 'step-3.5-flash'
-  | 'arcee-trinity-large'
-  | 'liquid-lfm-thinking'
-  | 'liquid-lfm-instruct'
+  | 'nvidia-nemotron-3-super'
   | 'nvidia-qwen3'
   | 'nvidia-kimi-k2';
 
@@ -37,55 +36,49 @@ const AI_MODELS: AIModelOption[] = [
     description: 'gemini-2.0-pro (Google)',
     provider: 'gemini'
   },
-  // OpenRouter Free
+  // OpenRouter
   {
-    value: 'openrouter-hunter-alpha',
-    label: 'Hunter Alpha',
-    description: 'openrouter/hunter-alpha:free',
+    value: 'openrouter-auto',
+    label: 'Auto (Best Free)',
+    description: 'openrouter/auto - automatically selects best free model',
     provider: 'openrouter'
   },
   {
-    value: 'openrouter-healer-alpha',
-    label: 'Healer Alpha',
-    description: 'openrouter/healer-alpha:free',
+    value: 'deepseek-v3',
+    label: 'DeepSeek V3',
+    description: 'deepseek/deepseek-chat',
+    provider: 'openrouter'
+  },
+  {
+    value: 'deepseek-r1',
+    label: 'DeepSeek R1',
+    description: 'deepseek/deepseek-r1',
+    provider: 'openrouter'
+  },
+  {
+    value: 'qwen-3-8b',
+    label: 'Qwen 3 8B',
+    description: 'qwen/qwen3-8b-instruct',
+    provider: 'openrouter'
+  },
+  {
+    value: 'llama-3-8b',
+    label: 'Llama 3 8B',
+    description: 'meta-llama/llama-3-8b-instruct',
     provider: 'openrouter'
   },
   {
     value: 'minimax-m2.5',
     label: 'MiniMax M2.5',
-    description: 'minimax/minimax-m2.5:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'arcee-trinity-large',
-    label: 'Arcee Trinity Large',
-    description: 'arcee-ai/trinity-large-preview:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'liquid-lfm-thinking',
-    label: 'Liquid LFM Thinking',
-    description: 'liquid/lfm-2.5-1.2b-thinking:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'liquid-lfm-instruct',
-    label: 'Liquid LFM Instruct',
-    description: 'liquid/lfm-2.5-1.2b-instruct:free',
+    description: 'minimax/minimax-m2.5',
     provider: 'openrouter'
   },
   // NVIDIA
   {
     value: 'nvidia-nemotron-3-super',
     label: 'NVIDIA Nemotron 3 Super',
-    description: 'nvidia/nemotron-3-super-120b-a12b:free',
+    description: 'nvidia/nemotron-3-super-120b-a12b',
     provider: 'nvidia'
-  },
-  {
-    value: 'step-3.5-flash',
-    label: 'Step 3.5 Flash',
-    description: 'stepfun/step-3.5-flash:free',
-    provider: 'openrouter'
   },
   {
     value: 'nvidia-qwen3',
