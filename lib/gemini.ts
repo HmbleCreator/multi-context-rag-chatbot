@@ -21,23 +21,23 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   'gemini-2.0-pro': { provider: 'gemini', model: 'gemini-2.0-pro' },
 
   // OpenRouter (aliases from UI)
-  'deepseek-chat-v3-free': {
+  'deepseek-chat-v3': {
     provider: 'openrouter',
     model: 'deepseek/deepseek-chat-v3-0324:free',
   },
-  'deepseek-r1-free': {
+  'deepseek-r1': {
     provider: 'openrouter',
     model: 'deepseek/deepseek-r1:free',
   },
-  'llama-3.2-3b-free': {
+  'llama-3.2-3b': {
     provider: 'openrouter',
     model: 'meta-llama/llama-3.2-3b-instruct:free',
   },
-  'mixtral-8x7b-free': {
+  'mixtral-8x7b': {
     provider: 'openrouter',
     model: 'mistralai/mixtral-8x7b-instruct-v0.1:free',
   },
-  'qwen3-235b-free': {
+  'qwen3-235b': {
     provider: 'openrouter',
     model: 'qwen/qwen3-235b-a22b:free',
   },

@@ -5,11 +5,11 @@ import { useState } from 'react';
 export type AIModelProvider = 
   | 'gemini-2.0-flash'
   | 'gemini-2.0-pro'
-  | 'deepseek-chat-v3-free'
-  | 'deepseek-r1-free'
-  | 'llama-3.2-3b-free'
-  | 'mixtral-8x7b-free'
-  | 'qwen3-235b-free'
+  | 'deepseek-chat-v3'
+  | 'deepseek-r1'
+  | 'llama-3.2-3b'
+  | 'mixtral-8x7b'
+  | 'qwen3-235b'
   | 'nvidia-deepseek-r1'
   | 'nvidia-qwen3';
 
@@ -34,31 +34,31 @@ const AI_MODELS: AIModelOption[] = [
     provider: 'gemini'
   },
   {
-    value: 'deepseek-chat-v3-free',
+    value: 'deepseek-chat-v3',
     label: 'DeepSeek V3',
     description: 'deepseek/deepseek-chat-v3-0324:free',
     provider: 'openrouter'
   },
   {
-    value: 'deepseek-r1-free',
+    value: 'deepseek-r1',
     label: 'DeepSeek R1',
     description: 'deepseek/deepseek-r1:free',
     provider: 'openrouter'
   },
   {
-    value: 'llama-3.2-3b-free',
+    value: 'llama-3.2-3b',
     label: 'Llama 3.2 3B',
     description: 'meta-llama/llama-3.2-3b-instruct:free',
     provider: 'openrouter'
   },
   {
-    value: 'mixtral-8x7b-free',
+    value: 'mixtral-8x7b',
     label: 'Mixtral 8x7B',
     description: 'mistralai/mixtral-8x7b-instruct-v0.1:free',
     provider: 'openrouter'
   },
   {
-    value: 'qwen3-235b-free',
+    value: 'qwen3-235b',
     label: 'Qwen 3 235B',
     description: 'qwen/qwen3-235b-a22b:free',
     provider: 'openrouter'
