@@ -11,7 +11,7 @@ const nvidiaApiKey = process.env.NVIDIA_API_KEY;
 
 const DEFAULT_MODELS: Record<AIProvider, string> = {
   gemini: 'gemini-2.0-flash',
-  openrouter: 'openrouter/hunter-alpha:free',
+  openrouter: 'openrouter/hunter-alpha',
   nvidia: 'nvidia/nemotron-3-super-120b-a12b:free',
 };
 
@@ -21,16 +21,16 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   'gemini-2.0-pro': { provider: 'gemini', model: 'gemini-2.0-pro' },
 
   // OpenRouter Free
-  'openrouter-hunter-alpha': { provider: 'openrouter', model: 'openrouter/hunter-alpha:free' },
-  'openrouter-healer-alpha': { provider: 'openrouter', model: 'openrouter/healer-alpha:free' },
-  'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5:free' },
-  'sourceful-riverflow-pro': { provider: 'openrouter', model: 'sourceful/riverflow-v2-pro:free' },
-  'sourceful-riverflow-fast': { provider: 'openrouter', model: 'sourceful/riverflow-v2-fast:free' },
+  'openrouter-hunter-alpha': { provider: 'openrouter', model: 'openrouter/hunter-alpha' },
+  'openrouter-healer-alpha': { provider: 'openrouter', model: 'openrouter/healer-alpha' },
+  'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5' },
+  'sourceful-riverflow-pro': { provider: 'openrouter', model: 'sourceful/riverflow-v2-pro' },
+  'sourceful-riverflow-fast': { provider: 'openrouter', model: 'sourceful/riverflow-v2-fast' },
   'sourceful-riverflow-max': { provider: 'openrouter', model: 'sourceful/riverflow-v2-max-preview' },
-  'step-3.5-flash': { provider: 'openrouter', model: 'stepfun/step-3.5-flash:free' },
-  'arcee-trinity-large': { provider: 'openrouter', model: 'arcee-ai/trinity-large-preview:free' },
-  'arcee-trinity-mini': { provider: 'openrouter', model: 'arcee-ai/trinity-mini:free' },
-  'liquid-lfm-thinking': { provider: 'openrouter', model: 'liquid/lfm-2.5-1.2b-thinking:free' },
+  'step-3.5-flash': { provider: 'openrouter', model: 'stepfun/step-3.5-flash' },
+  'arcee-trinity-large': { provider: 'openrouter', model: 'arcee-ai/trinity-large-preview' },
+  'arcee-trinity-mini': { provider: 'openrouter', model: 'arcee-ai/trinity-mini' },
+  'liquid-lfm-thinking': { provider: 'openrouter', model: 'liquid/lfm-2.5-1.2b-thinking' },
 
   // NVIDIA Free
   'nvidia-nemotron-3-super': { provider: 'nvidia', model: 'nvidia/nemotron-3-super-120b-a12b:free' },
