@@ -72,4 +72,4 @@ pnpm run ingest -- C:\path\to\file.pdf --category nec
 
 ## License
 
-MIT
+Apache2.0
