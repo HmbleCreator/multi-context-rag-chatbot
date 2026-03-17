@@ -26,12 +26,15 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5:free' },
   'sourceful-riverflow-pro': { provider: 'openrouter', model: 'sourceful/riverflow-v2-pro:free' },
   'sourceful-riverflow-fast': { provider: 'openrouter', model: 'sourceful/riverflow-v2-fast:free' },
+  'sourceful-riverflow-max': { provider: 'openrouter', model: 'sourceful/riverflow-v2-max-preview' },
   'step-3.5-flash': { provider: 'openrouter', model: 'stepfun/step-3.5-flash:free' },
   'arcee-trinity-large': { provider: 'openrouter', model: 'arcee-ai/trinity-large-preview:free' },
+  'arcee-trinity-mini': { provider: 'openrouter', model: 'arcee-ai/trinity-mini:free' },
   'liquid-lfm-thinking': { provider: 'openrouter', model: 'liquid/lfm-2.5-1.2b-thinking:free' },
 
   // NVIDIA Free
   'nvidia-nemotron-3-super': { provider: 'nvidia', model: 'nvidia/nemotron-3-super-120b-a12b:free' },
+  'nvidia-nemotron-3-nano': { provider: 'nvidia', model: 'nvidia/nemotron-3-nano-30b-a3b:free' },
   'nvidia-llama-nemotron-embed': { provider: 'nvidia', model: 'nvidia/llama-nemotron-embed-vl-1b-v2:free' },
 };
 

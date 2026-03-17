@@ -10,10 +10,13 @@ export type AIModelProvider =
   | 'minimax-m2.5'
   | 'sourceful-riverflow-pro'
   | 'sourceful-riverflow-fast'
+  | 'sourceful-riverflow-max'
   | 'step-3.5-flash'
   | 'arcee-trinity-large'
+  | 'arcee-trinity-mini'
   | 'liquid-lfm-thinking'
   | 'nvidia-nemotron-3-super'
+  | 'nvidia-nemotron-3-nano'
   | 'nvidia-llama-nemotron-embed';
 
 interface AIModelOption {
@@ -69,6 +72,12 @@ const AI_MODELS: AIModelOption[] = [
     provider: 'openrouter'
   },
   {
+    value: 'sourceful-riverflow-max',
+    label: 'Riverflow Max',
+    description: 'sourceful/riverflow-v2-max-preview',
+    provider: 'openrouter'
+  },
+  {
     value: 'step-3.5-flash',
     label: 'Step 3.5 Flash',
     description: 'stepfun/step-3.5-flash:free',
@@ -78,6 +87,12 @@ const AI_MODELS: AIModelOption[] = [
     value: 'arcee-trinity-large',
     label: 'Arcee Trinity Large',
     description: 'arcee-ai/trinity-large-preview:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'arcee-trinity-mini',
+    label: 'Arcee Trinity Mini',
+    description: 'arcee-ai/trinity-mini:free',
     provider: 'openrouter'
   },
   {
@@ -91,6 +106,12 @@ const AI_MODELS: AIModelOption[] = [
     value: 'nvidia-nemotron-3-super',
     label: 'NVIDIA Nemotron 3 Super',
     description: 'nvidia/nemotron-3-super-120b-a12b:free',
+    provider: 'nvidia'
+  },
+  {
+    value: 'nvidia-nemotron-3-nano',
+    label: 'NVIDIA Nemotron 3 Nano',
+    description: 'nvidia/nemotron-3-nano-30b-a3b:free',
     provider: 'nvidia'
   },
   {
