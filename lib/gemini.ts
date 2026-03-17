@@ -138,6 +138,16 @@ export async function generateResponse(
   const modelName = getModelNameForProvider(model, provider);
   let finalProvider: AIProvider = provider;
   let finalModel = modelName;
+
+  const requestHistory: Message[] = [
+    ...history.slice(-4),
+    {
+      id: `user-${Date.now()}`,
+      role: 'user',
+      content: userMessage,
+      timestamp: new Date(),
+    },
+  ];
   
   const hasApiKey = provider === 'gemini' ? !!geminiApiKey : provider === 'openrouter' ? !!openrouterApiKey : !!nvidiaApiKey;
   console.log('Provider:', provider, 'Model:', modelName, 'API Key available:', hasApiKey);
@@ -157,16 +167,7 @@ export async function generateResponse(
     console.log('Calling AI provider...');
     const aiResponse = await providerInstance.generateResponse(
       systemPrompt + contextPrompt,
-      [
-        ...history.slice(-4).map(msg => ({
-          role: msg.role,
-          content: msg.content
-        })),
-        {
-          role: 'user',
-          content: userMessage
-        }
-      ]
+      requestHistory
     );
     const shouldFallback = (content: string) => {
       const normalized = content.toLowerCase();
@@ -183,16 +184,7 @@ export async function generateResponse(
       const fallbackProvider = createAIProvider('openrouter', openrouterApiKey, fallbackModel);
       const fallbackResponse = await fallbackProvider.generateResponse(
         systemPrompt + contextPrompt,
-        [
-          ...history.slice(-4).map(msg => ({
-            role: msg.role,
-            content: msg.content
-          })),
-          {
-            role: 'user',
-            content: userMessage
-          }
-        ]
+        requestHistory
       );
       finalProvider = 'openrouter';
       finalModel = fallbackModel;
@@ -260,6 +252,15 @@ export async function streamResponse(
   const modelName = getModelNameForProvider(model, provider);
   let finalProvider: AIProvider = provider;
   let finalModel = modelName;
+  const requestHistory: Message[] = [
+    ...history.slice(-4),
+    {
+      id: `user-${Date.now()}`,
+      role: 'user',
+      content: userMessage,
+      timestamp: new Date(),
+    },
+  ];
    
   // Create provider instance for this request
   const providerInstance = createAIProvider(
@@ -274,16 +275,7 @@ export async function streamResponse(
   try {
     await providerInstance.generateResponseStream(
       getSystemPrompt(intent.context),
-      [
-        ...history.slice(-4).map(msg => ({
-          role: msg.role,
-          content: msg.content
-        })),
-        {
-          role: 'user',
-          content: userMessage
-        }
-      ],
+      requestHistory,
       onChunk
     );
 
