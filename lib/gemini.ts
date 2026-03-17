@@ -62,7 +62,7 @@ function getDefaultProvider(): AIProvider {
 }
 
 function getOpenRouterFallbackModel(): string {
-  return process.env.OPENROUTER_MODEL_DEEPSEEK_V3 || DEFAULT_MODELS.openrouter;
+  return 'deepseek/deepseek-chat-v3-0324:free';
 }
 
 // Determine provider from model name or use default
