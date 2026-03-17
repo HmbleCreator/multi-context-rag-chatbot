@@ -90,7 +90,7 @@ export async function addDocuments(docs: Document[]): Promise<void> {
   });
 
   await index.upsertRecords({
-    records,
+    records: records as any,
     namespace,
   });
 }
@@ -157,7 +157,8 @@ export async function checkIndexExists(): Promise<boolean> {
     }
     const client = await getPineconeClient();
     const indexes = await client.listIndexes();
-    return indexes.some(idx => idx.name === indexName);
+    const indexArray = indexes as unknown as Array<{ name: string }>;
+    return indexArray.some(idx => idx.name === indexName);
   } catch {
     return false;
   }
