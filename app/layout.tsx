@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${body.variable} ${display.variable}`}>{children}</body>
+    <html lang="en" className="h-full">
+      <body className={`h-full ${body.variable} ${display.variable}`}>{children}</body>
     </html>
   );
 }

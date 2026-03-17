@@ -43,11 +43,10 @@ export function ChatInput({
           disabled={isLoading}
           rows={1}
           className={cn(
-            'max-h-40 min-h-[44px] flex-1 resize-none bg-transparent px-3 py-2.5 text-sm outline-none',
+            'max-h-32 min-h-[44px] flex-1 resize-none bg-transparent px-3 py-2.5 text-sm outline-none',
             'placeholder:text-gray-400',
             isLoading && 'opacity-50'
           )}
-          style={{ height: 'auto' }}
         />
         <button
           type="submit"

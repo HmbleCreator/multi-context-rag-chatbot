@@ -90,8 +90,8 @@ export function SearchPanel({ onAsk }: SearchPanelProps) {
       </form>
 
       {results.length > 0 && (
-        <div className="mt-3 space-y-2">
-          <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="mt-3 space-y-2 max-h-[400px] overflow-y-auto">
+          <div className="flex items-center justify-between text-xs text-gray-500 sticky top-0 bg-white/70 pb-1">
             <span>Search results</span>
             <ContextBadge context={lastContext} />
           </div>

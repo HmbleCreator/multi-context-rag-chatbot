@@ -9,9 +9,9 @@ export default function Home() {
   const [selectedModel, setSelectedModel] = useState<AIModelProvider>('openrouter-hunter-alpha');
 
   return (
-    <div className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-transparent">
+    <div className="flex flex-col h-screen bg-transparent">
       {/* Header */}
-      <header className="relative z-50 border-b border-gray-200/70 bg-white/80 px-4 py-4 backdrop-blur">
+      <header className="flex-shrink-0 relative z-50 border-b border-gray-200/70 bg-white/80 px-4 py-4 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-0 sm:px-2 lg:max-w-7xl lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-lg">
@@ -60,15 +60,15 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="h-full min-h-0 overflow-hidden">
-        <div className="relative z-10 flex h-full w-full min-h-0 max-w-none px-3 sm:px-6 lg:px-10">
+      {/* Main Content - flex-1 with min-h-0 */}
+      <main className="flex-1 min-h-0 overflow-hidden">
+        <div className="relative z-10 h-full w-full min-h-0 px-3 py-3 sm:px-6 lg:px-10">
           <ChatContainer selectedModel={selectedModel} />
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200/70 bg-white/80 px-4 py-3 text-center text-xs text-gray-500 backdrop-blur">
+      <footer className="flex-shrink-0 border-t border-gray-200/70 bg-white/80 px-4 py-3 text-center text-xs text-gray-500 backdrop-blur">
         <p>
           This chatbot uses AI to answer questions. Responses may not be 100% accurate.
           Always consult official NEC documentation and Wattmonk support for critical decisions.
