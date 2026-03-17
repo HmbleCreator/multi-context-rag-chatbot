@@ -36,3 +36,9 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+SUBMISSION.md
+PERFORMANCE.md
+Assignment.md
+DEPLOY.md
+DEPLOYMENT.md

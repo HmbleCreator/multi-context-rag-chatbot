@@ -161,7 +161,21 @@ export async function findSimilarDocuments(
       ? { category: { $eq: contextFilter } } 
       : undefined;
 
+    console.log(`Pinecone search: query="${query}", context="${contextFilter}", topK=${topK}, filter=${JSON.stringify(filter)}`);
+    
     const docsWithScores = await pineconeSearchWithScores(query, topK, filter);
+    console.log(`Pinecone returned ${docsWithScores.length} results`);
+
+    // If Pinecone returns no results, fall back to local documents
+    if (docsWithScores.length === 0) {
+      console.warn('Pinecone returned no results, falling back to local documents');
+      const results = fallbackSearch(query, contextFilter, topK);
+      return {
+        docs: results,
+        scores: results.map(doc => 0.85), // Fixed fallback score
+        source: 'fallback',
+      };
+    }
 
     return {
       docs: docsWithScores.map(({ doc, score }) => ({
@@ -178,10 +192,7 @@ export async function findSimilarDocuments(
       source: 'pinecone',
     };
   } catch (error) {
-    if (!pineconeDisabled) {
-      pineconeDisabled = true;
-      console.error('Pinecone search error, falling back to local and disabling Pinecone for this session:', error);
-    }
+    console.error('Pinecone search error, falling back to local:', error);
     const results = fallbackSearch(query, contextFilter, topK);
     return {
       docs: results,
