@@ -5,21 +5,16 @@ import { useState } from 'react';
 export type AIModelProvider = 
   | 'gemini-2.0-flash'
   | 'gemini-2.0-pro'
-  | 'deepseek-chat-v3'
-  | 'deepseek-r1'
-  | 'llama-3.2-3b'
-  | 'mixtral-8x7b'
-  | 'qwen3-235b'
-  | 'nvidia-deepseek-r1'
-  | 'nvidia-qwen3'
-  | 'nvidia-nemotron-3-super'
-  | 'nvidia-step-3.5-flash'
-  | 'minimax-m2.5'
   | 'openrouter-hunter-alpha'
   | 'openrouter-healer-alpha'
+  | 'nvidia-nemotron-3-super'
+  | 'minimax-m2.5'
+  | 'step-3.5-flash'
   | 'arcee-trinity-large'
   | 'liquid-lfm-thinking'
-  | 'liquid-lfm-instruct';
+  | 'liquid-lfm-instruct'
+  | 'nvidia-qwen3'
+  | 'nvidia-kimi-k2';
 
 interface AIModelOption {
   value: AIModelProvider;
@@ -43,36 +38,6 @@ const AI_MODELS: AIModelOption[] = [
     provider: 'gemini'
   },
   // OpenRouter Free
-  {
-    value: 'deepseek-chat-v3',
-    label: 'DeepSeek V3',
-    description: 'deepseek/deepseek-chat-v3-0324:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'deepseek-r1',
-    label: 'DeepSeek R1',
-    description: 'deepseek/deepseek-r1:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'llama-3.2-3b',
-    label: 'Llama 3.2 3B',
-    description: 'meta-llama/llama-3.2-3b-instruct:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'mixtral-8x7b',
-    label: 'Mixtral 8x7B',
-    description: 'mistralai/mixtral-8x7b-instruct-v0.1:free',
-    provider: 'openrouter'
-  },
-  {
-    value: 'qwen3-235b',
-    label: 'Qwen 3 235B',
-    description: 'qwen/qwen3-235b-a22b:free',
-    provider: 'openrouter'
-  },
   {
     value: 'openrouter-hunter-alpha',
     label: 'Hunter Alpha',
@@ -111,10 +76,16 @@ const AI_MODELS: AIModelOption[] = [
   },
   // NVIDIA
   {
-    value: 'nvidia-deepseek-r1',
-    label: 'NVIDIA DeepSeek R1',
-    description: 'deepseek/deepseek-r1-0528',
+    value: 'nvidia-nemotron-3-super',
+    label: 'NVIDIA Nemotron 3 Super',
+    description: 'nvidia/nemotron-3-super-120b-a12b:free',
     provider: 'nvidia'
+  },
+  {
+    value: 'step-3.5-flash',
+    label: 'Step 3.5 Flash',
+    description: 'stepfun/step-3.5-flash:free',
+    provider: 'openrouter'
   },
   {
     value: 'nvidia-qwen3',
@@ -123,15 +94,9 @@ const AI_MODELS: AIModelOption[] = [
     provider: 'nvidia'
   },
   {
-    value: 'nvidia-nemotron-3-super',
-    label: 'NVIDIA Nemotron 3 Super',
-    description: 'nvidia/nemotron-3-super-120b-a12b:free',
-    provider: 'nvidia'
-  },
-  {
-    value: 'nvidia-step-3.5-flash',
-    label: 'NVIDIA Step 3.5 Flash',
-    description: 'stepfun-ai/step-3.5-flash',
+    value: 'nvidia-kimi-k2',
+    label: 'NVIDIA Kimi K2 Thinking',
+    description: 'moonshotai/kimi-k2-thinking',
     provider: 'nvidia'
   }
 ];
