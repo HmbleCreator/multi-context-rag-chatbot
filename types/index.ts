@@ -35,6 +35,7 @@ export interface DocumentChunk {
     title: string;
     section?: string;
     page?: number;
+    category?: string;
   };
   embedding?: number[];
 }
