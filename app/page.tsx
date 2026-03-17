@@ -6,7 +6,7 @@ import { ModelSelector, AIModelProvider } from '@/components/ModelSelector';
 import { useState } from 'react';
 
 export default function Home() {
-  const [selectedModel, setSelectedModel] = useState<AIModelProvider>('deepseek-v3');
+  const [selectedModel, setSelectedModel] = useState<AIModelProvider>('gemini-2.0-flash');
 
   return (
     <div className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-transparent">
