@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { findSimilarDocuments } from '@/lib/embeddings';
 import { classifyIntent } from '@/lib/context-detector';
 
+export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 export async function GET(req: NextRequest) {
