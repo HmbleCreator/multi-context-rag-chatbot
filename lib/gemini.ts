@@ -43,7 +43,8 @@ function getDefaultProvider(): AIProvider {
   if (envProvider === 'gemini' || envProvider === 'openrouter' || envProvider === 'nvidia') {
     return envProvider as AIProvider;
   }
-  return 'gemini';
+  // Default to openrouter for free tier
+  return 'openrouter';
 }
 
 function getOpenRouterFallbackModel(): string {
