@@ -24,55 +24,55 @@ const AI_MODELS: AIModelOption[] = [
   {
     value: 'gemini-2.0-flash',
     label: 'Gemini 2.0 Flash',
-    description: 'Fast, 1M context, free',
+    description: 'gemini-2.0-flash (Google)',
     provider: 'gemini'
   },
   {
     value: 'gemini-2.0-pro',
     label: 'Gemini 2.0 Pro',
-    description: 'More capable, 1M context',
+    description: 'gemini-2.0-pro (Google)',
     provider: 'gemini'
   },
   {
     value: 'deepseek-chat-v3-free',
     label: 'DeepSeek V3',
-    description: 'Fast, strong reasoning',
+    description: 'deepseek/deepseek-chat-v3-0324:free',
     provider: 'openrouter'
   },
   {
     value: 'deepseek-r1-free',
     label: 'DeepSeek R1',
-    description: 'Advanced reasoning model',
+    description: 'deepseek/deepseek-r1:free',
     provider: 'openrouter'
   },
   {
     value: 'llama-3.2-3b-free',
     label: 'Llama 3.2 3B',
-    description: 'Lightweight, efficient',
+    description: 'meta-llama/llama-3.2-3b-instruct:free',
     provider: 'openrouter'
   },
   {
     value: 'mixtral-8x7b-free',
     label: 'Mixtral 8x7B',
-    description: 'Fast, multilingual',
+    description: 'mistralai/mixtral-8x7b-instruct-v0.1:free',
     provider: 'openrouter'
   },
   {
     value: 'qwen3-235b-free',
     label: 'Qwen 3 235B',
-    description: 'Large, powerful',
+    description: 'qwen/qwen3-235b-a22b:free',
     provider: 'openrouter'
   },
   {
     value: 'nvidia-deepseek-r1',
     label: 'NVIDIA DeepSeek R1',
-    description: 'Fast reasoning via NVIDIA',
+    description: 'deepseek/deepseek-r1-0528 (NVIDIA)',
     provider: 'nvidia'
   },
   {
     value: 'nvidia-qwen3',
     label: 'NVIDIA Qwen3',
-    description: 'Fast via NVIDIA NIM',
+    description: 'qwen/qwen3-235b-a22b (NVIDIA)',
     provider: 'nvidia'
   }
 ];

@@ -23,33 +23,33 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   // OpenRouter (aliases from UI)
   'deepseek-chat-v3-free': {
     provider: 'openrouter',
-    model: process.env.OPENROUTER_MODEL_DEEPSEEK_V3 || DEFAULT_MODELS.openrouter,
+    model: 'deepseek/deepseek-chat-v3-0324:free',
   },
   'deepseek-r1-free': {
     provider: 'openrouter',
-    model: process.env.OPENROUTER_MODEL_DEEPSEEK_R1 || DEFAULT_MODELS.openrouter,
+    model: 'deepseek/deepseek-r1:free',
   },
   'llama-3.2-3b-free': {
     provider: 'openrouter',
-    model: process.env.OPENROUTER_MODEL_LLAMA_3_2_3B,
+    model: 'meta-llama/llama-3.2-3b-instruct:free',
   },
   'mixtral-8x7b-free': {
     provider: 'openrouter',
-    model: process.env.OPENROUTER_MODEL_MIXTRAL_8X7B,
+    model: 'mistralai/mixtral-8x7b-instruct-v0.1:free',
   },
   'qwen3-235b-free': {
     provider: 'openrouter',
-    model: process.env.OPENROUTER_MODEL_QWEN3_235B,
+    model: 'qwen/qwen3-235b-a22b:free',
   },
 
   // NVIDIA (aliases from UI)
   'nvidia-deepseek-r1': {
     provider: 'nvidia',
-    model: process.env.NVIDIA_MODEL_DEEPSEEK_R1 || DEFAULT_MODELS.nvidia,
+    model: 'deepseek/deepseek-r1-0528',
   },
   'nvidia-qwen3': {
     provider: 'nvidia',
-    model: process.env.NVIDIA_MODEL_QWEN3,
+    model: 'qwen/qwen3-235b-a22b',
   },
 };
 
