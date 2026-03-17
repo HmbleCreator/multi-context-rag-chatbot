@@ -164,7 +164,7 @@ export async function findSimilarDocuments(
     const docsWithScores = await pineconeSearchWithScores(query, topK, filter);
 
     return {
-      docs: docsWithScores.map(({ doc }: { doc: Document }): DocumentChunk => ({
+      docs: docsWithScores.map(({ doc, score }) => ({
         id: String(doc.metadata.chunkId || doc.metadata.id || Math.random().toString(36).substr(2, 9)),
         content: doc.pageContent,
         context: (doc.metadata.category as ContextType) || 'general',
