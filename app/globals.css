@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f6f3ee;
+  --ink: #141414;
+  --border: #e6e1d9;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    position: relative;
+    overflow: hidden;
+  }
+
+  body > div {
+    height: 100%;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(20, 20, 20, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Markdown styles */
+.prose pre {
+  @apply rounded-lg bg-gray-100 p-3 text-sm;
+}
+
+.prose code {
+  @apply rounded bg-gray-100 px-1 py-0.5 text-sm;
+}
+
+.prose p {
+  @apply mb-2 last:mb-0;
+}
+
+.prose ul {
+  @apply mb-2 list-disc pl-4;
+}
+
+.prose ol {
+  @apply mb-2 list-decimal pl-4;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply mb-2 font-semibold;
+}
+
+.prose h1 {
+  @apply text-lg;
+}
+
+.prose h2 {
+  @apply text-base;
+}
+
+.prose h3 {
+  @apply text-sm;
+}
+
+.prose a {
+  @apply text-primary-600 underline;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
