@@ -20,37 +20,24 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   'gemini-2.0-flash': { provider: 'gemini', model: 'gemini-2.0-flash' },
   'gemini-2.0-pro': { provider: 'gemini', model: 'gemini-2.0-pro' },
 
-  // OpenRouter (aliases from UI)
-  'deepseek-chat-v3': {
-    provider: 'openrouter',
-    model: 'deepseek/deepseek-chat-v3-0324:free',
-  },
-  'deepseek-r1': {
-    provider: 'openrouter',
-    model: 'deepseek/deepseek-r1:free',
-  },
-  'llama-3.2-3b': {
-    provider: 'openrouter',
-    model: 'meta-llama/llama-3.2-3b-instruct:free',
-  },
-  'mixtral-8x7b': {
-    provider: 'openrouter',
-    model: 'mistralai/mixtral-8x7b-instruct-v0.1:free',
-  },
-  'qwen3-235b': {
-    provider: 'openrouter',
-    model: 'qwen/qwen3-235b-a22b:free',
-  },
+  // OpenRouter Free Models
+  'deepseek-chat-v3': { provider: 'openrouter', model: 'deepseek/deepseek-chat-v3-0324:free' },
+  'deepseek-r1': { provider: 'openrouter', model: 'deepseek/deepseek-r1:free' },
+  'llama-3.2-3b': { provider: 'openrouter', model: 'meta-llama/llama-3.2-3b-instruct:free' },
+  'mixtral-8x7b': { provider: 'openrouter', model: 'mistralai/mixtral-8x7b-instruct-v0.1:free' },
+  'qwen3-235b': { provider: 'openrouter', model: 'qwen/qwen3-235b-a22b:free' },
+  'openrouter-hunter-alpha': { provider: 'openrouter', model: 'openrouter/hunter-alpha:free' },
+  'openrouter-healer-alpha': { provider: 'openrouter', model: 'openrouter/healer-alpha:free' },
+  'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5:free' },
+  'arcee-trinity-large': { provider: 'openrouter', model: 'arcee-ai/trinity-large-preview:free' },
+  'liquid-lfm-thinking': { provider: 'openrouter', model: 'liquid/lfm-2.5-1.2b-thinking:free' },
+  'liquid-lfm-instruct': { provider: 'openrouter', model: 'liquid/lfm-2.5-1.2b-instruct:free' },
 
-  // NVIDIA (aliases from UI)
-  'nvidia-deepseek-r1': {
-    provider: 'nvidia',
-    model: 'deepseek/deepseek-r1-0528',
-  },
-  'nvidia-qwen3': {
-    provider: 'nvidia',
-    model: 'qwen/qwen3-235b-a22b',
-  },
+  // NVIDIA Models
+  'nvidia-deepseek-r1': { provider: 'nvidia', model: 'deepseek/deepseek-r1-0528' },
+  'nvidia-qwen3': { provider: 'nvidia', model: 'qwen/qwen3.5-122b-a10b' },
+  'nvidia-nemotron-3-super': { provider: 'nvidia', model: 'nvidia/nemotron-3-super-120b-a12b:free' },
+  'nvidia-step-3.5-flash': { provider: 'nvidia', model: 'stepfun-ai/step-3.5-flash' },
 };
 
 function getDefaultProvider(): AIProvider {
@@ -73,8 +60,8 @@ function getProviderFromModel(model: string | undefined): AIProvider {
   if (alias) return alias.provider;
 
   if (model.startsWith('gemini-')) return 'gemini';
-  if (model.startsWith('deepseek-') || model.startsWith('llama-') || model.startsWith('mixtral-') || model.startsWith('qwen')) return 'openrouter';
   if (model.startsWith('nvidia-')) return 'nvidia';
+  if (model.startsWith('deepseek-') || model.startsWith('llama-') || model.startsWith('mixtral-') || model.startsWith('qwen') || model.startsWith('openrouter-') || model.startsWith('minimax-') || model.startsWith('arcee-') || model.startsWith('liquid-')) return 'openrouter';
 
   return getDefaultProvider();
 }

@@ -11,7 +11,15 @@ export type AIModelProvider =
   | 'mixtral-8x7b'
   | 'qwen3-235b'
   | 'nvidia-deepseek-r1'
-  | 'nvidia-qwen3';
+  | 'nvidia-qwen3'
+  | 'nvidia-nemotron-3-super'
+  | 'nvidia-step-3.5-flash'
+  | 'minimax-m2.5'
+  | 'openrouter-hunter-alpha'
+  | 'openrouter-healer-alpha'
+  | 'arcee-trinity-large'
+  | 'liquid-lfm-thinking'
+  | 'liquid-lfm-instruct';
 
 interface AIModelOption {
   value: AIModelProvider;
@@ -21,6 +29,7 @@ interface AIModelOption {
 }
 
 const AI_MODELS: AIModelOption[] = [
+  // Gemini
   {
     value: 'gemini-2.0-flash',
     label: 'Gemini 2.0 Flash',
@@ -33,6 +42,7 @@ const AI_MODELS: AIModelOption[] = [
     description: 'gemini-2.0-pro (Google)',
     provider: 'gemini'
   },
+  // OpenRouter Free
   {
     value: 'deepseek-chat-v3',
     label: 'DeepSeek V3',
@@ -64,15 +74,64 @@ const AI_MODELS: AIModelOption[] = [
     provider: 'openrouter'
   },
   {
+    value: 'openrouter-hunter-alpha',
+    label: 'Hunter Alpha',
+    description: 'openrouter/hunter-alpha:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'openrouter-healer-alpha',
+    label: 'Healer Alpha',
+    description: 'openrouter/healer-alpha:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'minimax-m2.5',
+    label: 'MiniMax M2.5',
+    description: 'minimax/minimax-m2.5:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'arcee-trinity-large',
+    label: 'Arcee Trinity Large',
+    description: 'arcee-ai/trinity-large-preview:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'liquid-lfm-thinking',
+    label: 'Liquid LFM Thinking',
+    description: 'liquid/lfm-2.5-1.2b-thinking:free',
+    provider: 'openrouter'
+  },
+  {
+    value: 'liquid-lfm-instruct',
+    label: 'Liquid LFM Instruct',
+    description: 'liquid/lfm-2.5-1.2b-instruct:free',
+    provider: 'openrouter'
+  },
+  // NVIDIA
+  {
     value: 'nvidia-deepseek-r1',
     label: 'NVIDIA DeepSeek R1',
-    description: 'deepseek/deepseek-r1-0528 (NVIDIA)',
+    description: 'deepseek/deepseek-r1-0528',
     provider: 'nvidia'
   },
   {
     value: 'nvidia-qwen3',
-    label: 'NVIDIA Qwen3',
-    description: 'qwen/qwen3-235b-a22b (NVIDIA)',
+    label: 'NVIDIA Qwen3.5 122B',
+    description: 'qwen/qwen3.5-122b-a10b',
+    provider: 'nvidia'
+  },
+  {
+    value: 'nvidia-nemotron-3-super',
+    label: 'NVIDIA Nemotron 3 Super',
+    description: 'nvidia/nemotron-3-super-120b-a12b:free',
+    provider: 'nvidia'
+  },
+  {
+    value: 'nvidia-step-3.5-flash',
+    label: 'NVIDIA Step 3.5 Flash',
+    description: 'stepfun-ai/step-3.5-flash',
     provider: 'nvidia'
   }
 ];
