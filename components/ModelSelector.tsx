@@ -5,7 +5,7 @@ import { useState } from 'react';
 export type AIModelProvider = 
   | 'gemini-2.0-flash'
   | 'gemini-2.0-pro'
-  | 'openrouter-mimo-v2-pro'
+  | 'minimax-m2.5'
   | 'openrouter-healer-alpha'
   | 'minimax-m2.5'
   | 'sourceful-riverflow-pro'
@@ -42,9 +42,9 @@ const AI_MODELS: AIModelOption[] = [
   },
   // OpenRouter Free
   {
-    value: 'openrouter-mimo-v2-pro',
-    label: 'MiMo V2 Pro',
-    description: 'xiaomi/mimo-v2-pro:free',
+    value: 'minimax-m2.5',
+    label: 'MiniMax M2.5',
+    description: 'minimax/minimax-m2.5:free',
     provider: 'openrouter'
   },
   {
