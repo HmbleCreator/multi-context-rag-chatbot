@@ -11,7 +11,7 @@ const nvidiaApiKey = process.env.NVIDIA_API_KEY;
 
 const DEFAULT_MODELS: Record<AIProvider, string> = {
   gemini: 'gemini-2.0-flash',
-  openrouter: 'openrouter/hunter-alpha',
+  openrouter: 'xiaomi/mimo-v2-pro',
   nvidia: 'nvidia/nemotron-3-super-120b-a12b:free',
 };
 
@@ -21,7 +21,7 @@ const MODEL_ALIASES: Record<string, { provider: AIProvider; model?: string }> = 
   'gemini-2.0-pro': { provider: 'gemini', model: 'gemini-2.0-pro' },
 
   // OpenRouter Free
-  'openrouter-hunter-alpha': { provider: 'openrouter', model: 'openrouter/hunter-alpha' },
+  'openrouter-mimo-v2-pro': { provider: 'openrouter', model: 'xiaomi/mimo-v2-pro' },
   'openrouter-healer-alpha': { provider: 'openrouter', model: 'openrouter/healer-alpha' },
   'minimax-m2.5': { provider: 'openrouter', model: 'minimax/minimax-m2.5' },
   'sourceful-riverflow-pro': { provider: 'openrouter', model: 'sourceful/riverflow-v2-pro' },
@@ -48,7 +48,7 @@ function getDefaultProvider(): AIProvider {
 }
 
 function getOpenRouterFallbackModel(): string {
-  return 'openrouter/hunter-alpha';
+  return 'xiaomi/mimo-v2-pro';
 }
 
 // Determine provider from model name or use default

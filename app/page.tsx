@@ -6,7 +6,7 @@ import { ModelSelector, AIModelProvider } from '@/components/ModelSelector';
 import { useState } from 'react';
 
 export default function Home() {
-  const [selectedModel, setSelectedModel] = useState<AIModelProvider>('openrouter-hunter-alpha');
+  const [selectedModel, setSelectedModel] = useState<AIModelProvider>('openrouter-mimo-v2-pro');
 
   return (
     <div className="flex flex-col h-screen bg-transparent">
